@@ -1,13 +1,3 @@
-case node[:platform]
-when "debian","ubuntu"
-  template "/var/cache/local/preseeding/mysql-server.seed" do
-    source "mysql-server.seed.erb"
-    owner "root"
-    group "root"
-    mode "0600"
-  end
-end
-
 template value_for_platform([ "centos", "redhat", "suse" ] => {"default" => "/etc/my.cnf"}, "default" => "/etc/mysql/my.cnf") do
   source "my.cnf.erb"
   owner "root"
