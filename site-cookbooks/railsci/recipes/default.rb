@@ -22,7 +22,7 @@ aws
 memcached
 mysql::server
 mysql::server_ec2
-postgresql::server"
+postgresql::server
 sqlite
 }.each do |recipe|
   include_recipe recipe
