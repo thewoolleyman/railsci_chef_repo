@@ -17,4 +17,30 @@
 # limitations under the License.
 #
 
-include_recipe "aws"
+%w{ 
+aws
+memcached
+mysql::server
+mysql::server_ec2
+postgresql::server"
+sqlite
+}.each do |recipe|
+  include_recipe recipe
+end
+
+
+%w{ 
+libfcgi-dev
+libmysqlclient-dev
+libsqlite-dev
+libsqlite3-dev
+libxml2
+libxml2-dev
+libxslt1
+postgresql-server-dev-8.3
+sqlite
+}.each do |pkg|
+  package pkg do
+      action :install
+  end
+end
