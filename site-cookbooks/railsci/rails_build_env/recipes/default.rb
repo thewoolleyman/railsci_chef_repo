@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: railsci
+# Cookbook Name:: rails_build_env
 # Recipe:: default
 #
 # Copyright 2010, Chad Woolley
