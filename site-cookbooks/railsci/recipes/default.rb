@@ -30,8 +30,10 @@ end
 
 
 %w{ 
+build-essential
 libfcgi-dev
 libmysqlclient-dev
+libreadline5-dev
 libsqlite-dev
 libsqlite3-dev
 libxml2
@@ -39,6 +41,7 @@ libxml2-dev
 libxslt1
 postgresql-server-dev-8.3
 sqlite
+zlib1g-dev
 }.each do |pkg|
   package pkg do
       action :install
