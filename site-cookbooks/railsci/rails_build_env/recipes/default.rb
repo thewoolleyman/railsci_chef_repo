@@ -34,12 +34,12 @@ build-essential
 libfcgi-dev
 libmysqlclient-dev
 libreadline5-dev
-libsqlite-dev
+libsqlite0-dev
 libsqlite3-dev
 libxml2
 libxml2-dev
-libxslt1
-postgresql-server-dev-8.3
+libxslt1-dev
+postgresql-server-dev-8.4
 sqlite
 zlib1g-dev
 }.each do |pkg|
