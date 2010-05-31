@@ -20,10 +20,12 @@
 collection.all_resources.each do |resource|
   [
     "template[/etc/mysql/grants.sql]",
-    "template[/etc/tomcat6/tomcat6.conf"
+    "template[/etc/tomcat6/tomcat6.conf]"
   ].each do |template_with_delayed_action|
     if resource.to_s == template_with_delayed_action
-      resource.actions[:run][:delayed].clear
+      if resource.actions[:run] && resource.actions[:run][:delayed]
+        resource.actions[:run][:delayed].clear
+      end
     end
   end
 end
