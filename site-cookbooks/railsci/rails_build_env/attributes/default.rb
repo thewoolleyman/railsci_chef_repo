@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: railsci
-# Attributes:: railsci
+# Cookbook Name:: rails_build_env
+# Attributes:: rails_build_env
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright 2010, Chad Woolley
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
