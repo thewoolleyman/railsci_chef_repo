@@ -17,11 +17,19 @@
 # limitations under the License.
 #
 
-remote_file "/tmp/TeamCity-5.1.2.tar.gz" do
-  source "http://download.jetbrains.com/teamcity/TeamCity-5.1.2.tar.gz"
+%w{ 
+java
+tomcat6
+}.each do |recipe|
+  include_recipe recipe
+end
+
+
+remote_file "#{@node[:tomcat6][:webapps]}/TeamCity-5.1.2.war" do
+  source "http://download.jetbrains.com/teamcity/TeamCity-5.1.2.war"
   mode 0644
   owner "root"
   group "root"
-  not_if { ::FileTest.exists?("/tmp/TeamCity-5.1.2.tar.gz") }
+  not_if { ::FileTest.exists?("#{@node[:tomcat6][:webapps]}/TeamCity-5.1.2.war") }
 end
 
