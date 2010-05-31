@@ -18,8 +18,13 @@
 #
 
 collection.all_resources.each do |resource|
-  if resource.to_s == 'template[/etc/mysql/grants.sql]'
-    resource.actions[:run][:delayed].clear
+  [
+    "template[/etc/mysql/grants.sql]",
+    "template[/etc/tomcat6/tomcat6.conf"
+  ].each do |template_with_delayed_action|
+    if resource.to_s == template_with_delayed_action
+      resource.actions[:run][:delayed].clear
+    end
   end
 end
 
