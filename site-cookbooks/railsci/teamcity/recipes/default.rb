@@ -18,7 +18,7 @@
 #
 
 %w{ 
-java
+java_sun
 tomcat6
 }.each do |recipe|
   include_recipe recipe
