@@ -21,7 +21,6 @@
 aws
 memcached
 mysql::server
-mysql::server_ec2
 postgresql::server
 sqlite
 }.each do |recipe|
