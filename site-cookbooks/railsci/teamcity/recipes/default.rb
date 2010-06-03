@@ -28,8 +28,23 @@ end
 remote_file "#{@node[:tomcat6][:webapps]}/TeamCity-5.1.2.war" do
   source "http://download.jetbrains.com/teamcity/TeamCity-5.1.2.war"
   mode 0644
-  owner "root"
-  group "root"
+  owner "#{node[:tomcat6][:user]}"
+  group "#{node[:tomcat6][:user]}"
   not_if { ::FileTest.exists?("#{@node[:tomcat6][:webapps]}/TeamCity-5.1.2.war") }
+end
+
+remote_file "#{node[:tomcat6][:dir]}/teamcity-server-log4j.xml" do
+  source "teamcity-server-log4j.xml"
+  mode 0644
+  owner "#{node[:tomcat6][:user]}"
+  group "#{node[:tomcat6][:user]}"
+end
+
+template "#{node[:tomcat6][:dir]}/tomcat6_custom.conf" do
+  source "tomcat6_custom.conf.erb"
+  group "#{node[:tomcat6][:user]}"
+  owner "#{node[:tomcat6][:user]}"
+  mode 0644
+  notifies :restart, resources(:service => "tomcat6"), :immediately
 end
 
