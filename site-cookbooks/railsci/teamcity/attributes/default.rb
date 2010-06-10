@@ -17,3 +17,6 @@
 # limitations under the License.
 #
 
+set_unless[:teamcity][:install_path] = "/srv"
+set_unless[:teamcity][:user] = "root"
+
