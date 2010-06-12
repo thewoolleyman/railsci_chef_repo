@@ -43,14 +43,14 @@ bash "install_teamcity" do
 end
 
 if node[:platform] =~ /ubuntu/i
-  execute "start-teamcity" do
-    command "start teamcity"
+  execute "start-teamcity-server" do
+    command "start teamcity-server"
     action :nothing
   end
 
-  template "/etc/init/teamcity.conf" do
-    source "teamcity.conf.erb"
+  template "/etc/init/teamcity-server.conf" do
+    source "teamcity-server.conf.erb"
     mode 0644
-    notifies :run, resources(:execute => "start-teamcity"), :immediately
+    notifies :run, resources(:execute => "start-teamcity-server"), :immediately
   end
 end
