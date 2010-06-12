@@ -53,4 +53,15 @@ if node[:platform] =~ /ubuntu/i
     mode 0644
     notifies :run, resources(:execute => "start-teamcity-server"), :immediately
   end
+
+  execute "start-teamcity-agent" do
+    command "start teamcity-agent"
+    action :nothing
+  end
+
+  template "/etc/init/teamcity-agent.conf" do
+    source "teamcity-agent.conf.erb"
+    mode 0644
+    notifies :run, resources(:execute => "start-teamcity-agent"), :immediately
+  end
 end
