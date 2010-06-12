@@ -36,6 +36,12 @@ unless File.exists?("#{node[:teamcity][:install_path]}/TeamCity")
   end
 end
 
+bash "install_teamcity" do
+  code <<-EOH
+  chown -R #{node[:teamcity][:user]}:#{node[:teamcity][:user]} #{node[:teamcity][:install_path]}
+  EOH
+end
+
 if node[:platform] =~ /ubuntu/i
   execute "start-teamcity" do
     command "start teamcity"
