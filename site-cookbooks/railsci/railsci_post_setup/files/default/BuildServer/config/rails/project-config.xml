@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project SYSTEM "../project-config.dtd">
+
+<project id="project2">
+  <description>rails</description>
+  <build-type id="bt2" name="rails">
+    <description>rails</description>
+    <settings>
+      <options>
+        <option name="allowExternalStatus" value="true" />
+        <option name="buildNumberPattern" value="%build.vcs.number.*%" />
+        <option name="cleanBuild" value="true" />
+      </options>
+      <config-parameters>
+        <param name="build.vcs.number.*" value="%build.vcs.number%" />
+      </config-parameters>
+      <runner type="simpleRunner">
+        <run-parameters>
+          <param name="command.executable" value="/home/ubuntu/.rvm/bin/ruby-1.8.7-p174" />
+          <param name="command.parameters" value="ci/ci_build.rb" />
+        </run-parameters>
+      </runner>
+      <vcs-settings checkout-mode="ON_SERVER" labeling-type="NONE" labeling-pattern="build-%system.build.number%">
+        <vcs-entry-ref root-id="1" set-label="false" />
+      </vcs-settings>
+      <requirements />
+      <build-parameters />
+      <build-triggers>
+        <build-trigger name="vcsTrigger">
+          <parameters>
+            <param name="quietPeriodMode" value="DO_NOT_USE" />
+            <param name="triggerRules" value="+:root=rails master:**/*" />
+          </parameters>
+        </build-trigger>
+      </build-triggers>
+    </settings>
+  </build-type>
+</project>
+

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-roots modification-check-interval="60" quiet-period="60">
+  <vcs-root id="1" name="rails master" type="jetbrains.git">
+    <scope level="project" project-id="project2" />
+    <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+    <param name="agentCleanPolicy" value="ALWAYS" />
+    <param name="authMethod" value="ANONYMOUS" />
+    <param name="branch" value="master" />
+    <param name="submoduleCheckout" value="CHECKOUT" />
+    <param name="url" value="http://github.com/rails/rails.git" />
+    <param name="usernameStyle" value="EMAIL" />
+  </vcs-root>
+</vcs-roots>
+
