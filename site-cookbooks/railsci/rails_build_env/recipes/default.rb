@@ -21,6 +21,7 @@
 memcached
 mysql
 postgres
+java
 }.each do |recipe|
   include_recipe recipe
 end
