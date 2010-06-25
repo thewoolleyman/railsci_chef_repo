@@ -1,16 +1,12 @@
-package "libmysqlclient-dev" do
+package "postgresql-8.4" do
   action :upgrade
 end
 
-package "mysql-client" do
+package "postgresql-client-8.4" do
   action :upgrade
 end
 
-package "mysql-server" do
-  action :upgrade
-end
-
-service "mysql" do
+service "postgresql" do
   action :nothing
   supports :status => true, :start => true, :stop => true, :restart => true
 end
