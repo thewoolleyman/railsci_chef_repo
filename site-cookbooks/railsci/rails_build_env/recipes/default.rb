@@ -19,7 +19,7 @@
 
 %w{ 
 memcached
-mysql::server
+mysql
 postgresql::server
 sqlite
 }.each do |recipe|
@@ -27,10 +27,9 @@ sqlite
 end
 
 
-%w{ 
+%w{
 build-essential
 libfcgi-dev
-libmysqlclient-dev
 libreadline5-dev
 libsqlite0-dev
 libsqlite3-dev
@@ -46,21 +45,3 @@ zlib1g-dev
   end
 end
 
-%w{ 
-build-essential
-libfcgi-dev
-libmysqlclient-dev
-libreadline5-dev
-libsqlite0-dev
-libsqlite3-dev
-libxml2
-libxml2-dev
-libxslt1-dev
-postgresql-server-dev-8.4
-sqlite
-zlib1g-dev
-}.each do |pkg|
-  package pkg do
-      action :install
-  end
-end
