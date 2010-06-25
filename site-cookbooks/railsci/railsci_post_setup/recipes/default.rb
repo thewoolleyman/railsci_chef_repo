@@ -19,7 +19,7 @@
 
 # Make a symlink to current java home.  Asked on chef-dev list what is correct way to handle this...
 link "/usr/lib/jvm/java" do
-  to "/usr/lib/jvm/java-6-openjdk"
+  to "/usr/lib/jvm/java-6-sun"
 end
 
 directory "/home/#{node['teamcity']['user']}/.BuildServer" do

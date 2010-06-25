@@ -22,6 +22,7 @@ memcached
 mysql
 postgres
 java
+teamcity
 }.each do |recipe|
   include_recipe recipe
 end
