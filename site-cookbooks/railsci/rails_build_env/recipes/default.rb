@@ -18,7 +18,6 @@
 #
 
 %w{ 
-aws
 memcached
 mysql::server
 postgresql::server
@@ -27,6 +26,25 @@ sqlite
   include_recipe recipe
 end
 
+
+%w{ 
+build-essential
+libfcgi-dev
+libmysqlclient-dev
+libreadline5-dev
+libsqlite0-dev
+libsqlite3-dev
+libxml2
+libxml2-dev
+libxslt1-dev
+postgresql-server-dev-8.4
+sqlite
+zlib1g-dev
+}.each do |pkg|
+  package pkg do
+      action :install
+  end
+end
 
 %w{ 
 build-essential

@@ -1,5 +1,5 @@
 maintainer       "Chad Woolley"
-maintainer_email "thewoolleyman@opscode.com"
+maintainer_email "thewoolleyman@gmail.com"
 license          "Apache 2.0"
 description      "Disable all chef actions which do not work under chroot"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))

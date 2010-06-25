@@ -1,5 +1,5 @@
 maintainer       "Chad Woolley"
-maintainer_email "thewoolleyman@opscode.com"
+maintainer_email "thewoolleyman@gmail.com"
 license          "Apache 2.0"
 description      "Misc. post-setup tasks for the CI server for the Ruby on Rails framework's source code"
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
