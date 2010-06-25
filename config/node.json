@@ -17,9 +17,6 @@
   "chroot": "false",
   "run_list": [
     "recipe[rails_build_env]",
-    "recipe[rails_build_env::postgresql]",
-    "recipe[java_sun]",
-    "recipe[teamcity]",
     "recipe[chroot]",
     "recipe[railsci_post_setup]"
   ]

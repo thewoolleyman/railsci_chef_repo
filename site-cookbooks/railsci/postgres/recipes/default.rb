@@ -6,7 +6,7 @@ package "postgresql-client-8.4" do
   action :upgrade
 end
 
-service "postgresql" do
+service "postgresql-8.4" do
   action :nothing
   supports :status => true, :start => true, :stop => true, :restart => true
 end

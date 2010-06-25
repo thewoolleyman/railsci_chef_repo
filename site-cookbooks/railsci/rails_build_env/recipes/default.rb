@@ -20,8 +20,7 @@
 %w{ 
 memcached
 mysql
-postgresql::server
-sqlite
+postgres
 }.each do |recipe|
   include_recipe recipe
 end
