@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: railsci_post_setup
-# Recipe:: default
+# Recipe:: mysql
 #
 # Copyright 2010, Chad Woolley
 #
@@ -17,5 +17,14 @@
 # limitations under the License.
 #
 
-include_recipe "railsci_post_setup::teamcity"
-include_recipe "railsci_post_setup::mysql"
+bash "Mysql grant to rails@localhost" do
+  code "mysql -uroot -e 'grant all on *.* to rails@localhost;'"
+end
+
+bash "Mysql create db activerecord_unittest" do
+  code "mysql -urails -e 'create database if not exists activerecord_unittest;'"
+end
+
+bash "Mysql create db activerecord_unittest2" do
+  code "mysql -urails -e 'create database if not exists activerecord_unittest2;'"
+end
