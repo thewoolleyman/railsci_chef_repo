@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: railsci_post_setup
-# Recipe:: default
+# Recipe:: mysql
 #
 # Copyright 2010, Chad Woolley
 #
@@ -17,6 +17,9 @@
 # limitations under the License.
 #
 
-include_recipe "railsci_post_setup::teamcity"
-include_recipe "railsci_post_setup::postgres"
-include_recipe "railsci_post_setup::mysql"
+bash "Create postgres user" do
+  postgres_user = "ubuntu"
+  code "su - postgres -c 'createuser -s #{postgres_user}'"
+  not_if "su - postgres -c \"psql -d postgres -U postgres -c 'select * from pg_user'\" | grep #{postgres_user}"
+end
+
