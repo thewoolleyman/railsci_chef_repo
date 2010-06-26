@@ -39,6 +39,7 @@ libxml2-dev
 libxslt1-dev
 postgresql-server-dev-8.4
 sqlite
+sqlite3
 zlib1g-dev
 }.each do |pkg|
   package pkg do
