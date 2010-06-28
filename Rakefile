@@ -64,3 +64,10 @@ task :bundle_cookbook, :cookbook do |t, args|
   FileUtils.rm_rf temp_dir
 end
 
+namespace :railsci do
+  desc "Regenerate metadata for railsci cookbooks (since default metadata task doesn't do anything by default)"
+  task :metadata do
+    metadata_cmd = "knife cookbook metadata -a -o #{File.expand_path(File.dirname(__FILE__), "/site-cookbooks/railsci")}"
+    system(metadata_cmd) || raise("Metadata regeneration command failed:\n #{metadata_cmd}")
+  end
+end
