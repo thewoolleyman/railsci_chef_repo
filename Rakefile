@@ -70,4 +70,10 @@ namespace :railsci do
     metadata_cmd = "knife cookbook metadata -a -u localhost -o #{File.expand_path(File.dirname(__FILE__), "/site-cookbooks/railsci")}"
     system(metadata_cmd) || raise("Metadata regeneration command failed:\n #{metadata_cmd}")
   end
+
+  desc "Run chef-solo with railsci config (NOTE: should only be run on CI box!)" # TODO: prevent it from being run in wrong place
+  task "chef-solo" do
+    chef_solo_cmd = "rvmsudo chef-solo -c #{ENV['HOME']}/chef/railsci_chef_repo/config/solo.rb -j #{ENV['HOME']}/chef/railsci_chef_repo/config/node.json"
+    system(chef_solo_cmd) || raise("chef-solo command failed:\n #{chef_solo_cmd}")
+  end
 end
