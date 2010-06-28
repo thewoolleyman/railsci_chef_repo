@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: postgresql
-# Recipe:: client
+# Cookbook Name:: railsci_post_setup
+# Recipe:: mysql
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright 2010, Chad Woolley
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,9 +17,9 @@
 # limitations under the License.
 #
 
-case node[:platform] 
-when "ubuntu","debian"
-  package "postgresql-client"
-when "redhat","centos","fedora"
-  package "postgresql-devel"
+bash "Create postgres user" do
+  postgres_user = "ubuntu"
+  code "su - postgres -c 'createuser -s #{postgres_user}'"
+  not_if "su - postgres -c \"psql -d postgres -U postgres -c 'select * from pg_user'\" | grep #{postgres_user}"
 end
+

@@ -1,36 +1,28 @@
 = DESCRIPTION:
 
-Installs and configures postgresql client or server.
+Installs mysql
 
 = REQUIREMENTS:
 
-== Platform:
+Tested on Ubuntu 10.04.
 
-Tested on Ubuntu 8.10, but adapted from Red Hat Enterprise 5.0 based recipes.
+Required cookbooks:
 
-== Cookbooks:
+* TODO: update
 
-= ATTRIBUTES: 
+= ATTRIBUTES:
 
-* postgresql[:dir] - configuration file location.
+* TODO: update
 
 = USAGE:
 
-For clients:
+Include the default recipe to install mysql
 
-  include_recipe "postgresql::client"
-  
-For server: 
+= LICENSE AND AUTHOR:
 
-  include_recipe "postgresql::server"
-  
-(client is already included by server)
+Author:: Chad Woolley (<thewoolleyman@gmail.com>)
 
-= LICENSE and AUTHOR:
-      
-Author:: Joshua Timberman (<joshua@opscode.com>)
-
-Copyright:: 2009, Opscode, Inc
+Copyright:: 2010, Chad Woolley
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

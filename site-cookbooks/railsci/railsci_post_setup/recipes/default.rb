@@ -17,50 +17,6 @@
 # limitations under the License.
 #
 
-# Make a symlink to current java home.  Asked on chef-dev list what is correct way to handle this...
-link "/usr/lib/jvm/java" do
-  to "/usr/lib/jvm/java-6-openjdk"
-end
-
-directory "/home/#{node['teamcity']['user']}/.BuildServer" do
-  mode 0755
-  action :create
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
-directory "/home/#{node['teamcity']['user']}/.BuildServer/config" do
-  mode 0755
-  action :create
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
-directory "/home/#{node['teamcity']['user']}/.BuildServer/config/rails" do
-  mode 0755
-  action :create
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
-remote_file "/home/#{node['teamcity']['user']}/.BuildServer/config/vcs-roots.xml" do
-  source "BuildServer/config/vcs-roots.xml"
-  mode 0644
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
-remote_file "/home/#{node['teamcity']['user']}/.BuildServer/config/rails/plugin-settings.xml" do
-  source "BuildServer/config/rails/plugin-settings.xml"
-  mode 0644
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
-remote_file "/home/#{node['teamcity']['user']}/.BuildServer/config/rails/project-config.xml" do
-  source "BuildServer/config/rails/project-config.xml"
-  mode 0644
-  owner node['teamcity']['user']
-  group node['teamcity']['user']
-end
-
+include_recipe "railsci_post_setup::teamcity"
+include_recipe "railsci_post_setup::postgres"
+include_recipe "railsci_post_setup::mysql"

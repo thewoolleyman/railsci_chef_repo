@@ -17,11 +17,7 @@
 # limitations under the License.
 #
 
-%w{ 
-java_sun
-}.each do |recipe|
-  include_recipe recipe
-end
+include_recipe "java"
 
 unless File.exists?("/tmp/TeamCity-5.1.2.tar.gz")
   remote_file "/tmp/TeamCity-5.1.2.tar.gz" do

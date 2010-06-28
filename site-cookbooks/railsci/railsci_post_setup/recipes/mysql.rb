@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: postgresql
-# Recipe:: default
+# Cookbook Name:: railsci_post_setup
+# Recipe:: mysql
 #
-# Copyright 2009, Opscode, Inc.
+# Copyright 2010, Chad Woolley
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,3 +16,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+bash "Mysql grant to rails@localhost" do
+  code "mysql -uroot -e 'grant all on *.* to rails@localhost;'"
+end
+
+bash "Mysql create db activerecord_unittest" do
+  code "mysql -urails -e 'create database if not exists activerecord_unittest;'"
+end
+
+bash "Mysql create db activerecord_unittest2" do
+  code "mysql -urails -e 'create database if not exists activerecord_unittest2;'"
+end

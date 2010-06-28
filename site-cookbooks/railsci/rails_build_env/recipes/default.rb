@@ -18,20 +18,19 @@
 #
 
 %w{ 
-aws
 memcached
-mysql::server
-postgresql::server
-sqlite
+mysql
+postgres
+java
+teamcity
 }.each do |recipe|
   include_recipe recipe
 end
 
 
-%w{ 
+%w{
 build-essential
 libfcgi-dev
-libmysqlclient-dev
 libreadline5-dev
 libsqlite0-dev
 libsqlite3-dev
@@ -40,9 +39,11 @@ libxml2-dev
 libxslt1-dev
 postgresql-server-dev-8.4
 sqlite
+sqlite3
 zlib1g-dev
 }.each do |pkg|
   package pkg do
       action :install
   end
 end
+

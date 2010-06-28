@@ -1,30 +1,38 @@
 {
   "version": "0.1.0",
-  "recipes": {
-  },
-  "groupings": {
-  },
-  "long_description": "= DESCRIPTION:\n\nInstalls a CI server for the Ruby on Rails framework's source code.  See:\n\nhttp://github.com/thewoolleyman/railsci_chef_repo\nhttp://github.com/thewoolleyman/railsci\n\n= REQUIREMENTS:\n\nTested on Ubuntu 10.04.\n\nRequired cookbooks:\n\n* TODO: update\n\n= ATTRIBUTES:\n\n* TODO: update\n\n= USAGE:\n\nInclude the default recipe to installs a CI server for the Ruby on Rails framework's source code.\n\n= LICENSE AND AUTHOR:\n\nAuthor:: Chad Woolley (<thewoolleyman@gmail.com>)\n\nCopyright:: 2010, Chad Woolley\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
-  "recommendations": {
+  "providing": {
+
   },
   "attributes": {
+
   },
-  "maintainer": "Chad Woolley",
-  "suggestions": {
+  "replacing": {
+
   },
   "dependencies": {
     "runit": [
 
     ]
   },
-  "maintainer_email": "thewoolleyman@opscode.com",
-  "conflicting": {
+  "groupings": {
+
+  },
+  "long_description": "= DESCRIPTION:\n\nMisc. post-setup tasks for the CI server for the Ruby on Rails framework's source code\n\n= REQUIREMENTS:\n\nTested on Ubuntu 10.04.\n\nRequired cookbooks:\n\n* TODO: update\n\n= ATTRIBUTES:\n\n* TODO: update\n\n= USAGE:\n\nMisc. post-setup tasks for the CI server for the Ruby on Rails framework's source code\n\n= LICENSE AND AUTHOR:\n\nAuthor:: Chad Woolley (<thewoolleyman@gmail.com>)\n\nCopyright:: 2010, Chad Woolley\n\nLicensed under the Apache License, Version 2.0 (the \"License\");\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\n\n    http://www.apache.org/licenses/LICENSE-2.0\n\nUnless required by applicable law or agreed to in writing, software\ndistributed under the License is distributed on an \"AS IS\" BASIS,\nWITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\nSee the License for the specific language governing permissions and\nlimitations under the License.\n",
+  "recommendations": {
+
   },
   "license": "Apache 2.0",
-  "providing": {
+  "maintainer": "Chad Woolley",
+  "suggestions": {
+
   },
-  "name": "railsci",
-  "replacing": {
+  "name": "railsci_post_setup",
+  "maintainer_email": "thewoolleyman@gmail.com",
+  "recipes": {
+
+  },
+  "conflicting": {
+
   },
   "platforms": {
     "debian": [
@@ -34,5 +42,5 @@
 
     ]
   },
-  "description": "Installs a CI server for the Ruby on Rails framework's source code"
+  "description": "Misc. post-setup tasks for the CI server for the Ruby on Rails framework's source code"
 }
